@@ -134,7 +134,8 @@
     }
 
     #semestral{
-      animation: hover linear both;
+      animation: hover linear forwards;
+      transition: all .5s;
 
       & h4{
         color: var(--pink-light);
@@ -179,9 +180,21 @@
 @media (width >= 48em){
   #sign{
     gap: 3.5rem;
+    position: relative;
 
     header{
       margin: 0;
+    }
+
+    & .layer-blur{
+      position: absolute;
+      width: 944px;
+      height: 944px;
+      left: 14rem;
+
+      background: var(--shape-base);
+      filter: blur(284px);
+      z-index: -1;
     }
 
     .sign-cards{
@@ -311,7 +324,5 @@
         transition: bottom .5s, z-index .5s, background .5s;
       }
     }
-
-    
   }
 }

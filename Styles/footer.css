@@ -1,0 +1,177 @@
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 2rem 2rem;
+  background: url(../Assets/Image/book-trace-background-mobile.png)
+  no-repeat top/cover;
+  gap: 2.5rem;
+
+  & .social-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    width: 100%;
+
+    & img:first-child{
+      width: 10rem;
+      height: 2.5rem;
+    }
+
+    & .trace{
+      border: 1px solid var(--shape-stroke);
+      width: 100%;
+    }
+
+    & .links{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        transition: background .5s;
+        border-radius: 50%;
+
+        & .instagram{
+          background-image: url(../Assets/Icons/instagram-blue.svg);
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        & .twitter{
+          background-image: url(../Assets/Icons/twitter-blue.svg);
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        & .facebook{
+          background-image: url(../Assets/Icons/facebook-blue.svg);
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        & .discord{
+          background-image: url(../Assets/Icons/discord-blue.svg);
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        & .whatsapp{
+          background-image: url(../Assets/Icons/whatsapp-blue.svg);
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        & .mail{
+          background-image: url(../Assets/Icons/mail-blue.svg);
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        & div{
+          transition: background .5s;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        &:hover{
+          background-color: var(--blue-dark);
+          border-radius: 50%;
+
+          & .instagram{
+            background-image: url(../Assets/Icons/instagram.svg);
+          }
+
+          & .twitter{
+            background-image: url(../Assets/Icons/twitter.svg);
+          }
+
+          & .facebook{
+            background-image: url(../Assets/Icons/facebook.svg);
+          }
+
+          & .discord{
+            background-image: url(../Assets/Icons/discord.svg);
+          }
+
+          & .whatsapp{
+            background-image: url(../Assets/Icons/whatsapp.svg);
+          }
+
+          & .mail{
+            background-image: url(../Assets/Icons/mail.svg);
+          }
+        }
+      }
+    }
+  }
+
+  & .info-links{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      gap: .75rem;
+
+      & div{
+        padding-bottom: .5rem;
+
+        p{
+          font: var(--title-xs);
+        }
+      }
+
+      & li{
+        & a{
+          font: var(--link);
+          color: var(--blue-light);
+          transition: color .5s;
+        }
+
+        &:hover{
+          a{
+            color: var(--text-body);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 48em){
+  footer{
+    flex-direction: row;
+    padding: 10.625rem 10rem 6.375rem;
+    background: url(../Assets/Image/book-trace-background.png) no-repeat
+    center/cover;
+
+    & .social-links{
+      max-width: 16.5rem;
+
+      & img:first-child{
+        width: initial;
+        height: initial;
+      }
+    }
+
+    & .info-links{
+      max-width: 19.5rem;
+    }
+  }
+}
