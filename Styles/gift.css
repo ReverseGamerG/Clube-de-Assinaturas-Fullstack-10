@@ -151,7 +151,7 @@
     & h2{
       margin-block: 7.125rem 9.875rem;
       font: var(--subtitle);
-      font-size: calc(17.6px + 1vw);
+      font-size: calc(15px + 1vw);
 
       & strong{
         font-weight: 700;
