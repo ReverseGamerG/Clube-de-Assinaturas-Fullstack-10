@@ -1,0 +1,202 @@
+#gifts{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  max-width: 71rem;
+  margin-inline: auto;
+  text-align: center;
+  padding: 5.0625rem 1.25rem;
+  position: relative;
+
+  & span, span img{
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  & span{ 
+    display: inline-block;
+    position: absolute;
+
+    & img{
+      animation: dissapear 500ms both;
+      scale: 0;
+    }
+  }
+  
+  & h2{
+    font: var(--body-md);
+    font-weight: 500;
+    color: rgba(226, 231, 233, 0.5);
+    animation: dissapear-first 500ms both;
+
+    & b{
+      font-weight: inherit;
+    }
+
+    & strong{
+      font-weight: inherit;
+      color: rgba(226, 231, 233, 0.5);
+      animation: dissapear-blue 400ms both;
+    }
+  }
+
+  & span.book-appear {
+    right: 5rem;
+    top: 2rem;
+
+    & img{
+      transform: 
+      rotate(10.57deg);
+    }
+  }
+
+  & span.ouija-appear{
+    bottom: 3.2rem;
+
+    & img{
+      transform: 
+      rotate(-30deg);
+    }
+  }
+
+  & span.ball-appear{
+    bottom: 2.2rem;
+    right: 1.5rem;
+
+    & img{
+      transform: 
+      rotate(15deg);
+    }
+  }
+
+  &:hover{
+    & .book-appear, span.book-appear img{
+      animation: appear 200ms both;
+
+      & strong{
+        animation: appear-blue 200ms both;
+      }
+    }
+
+    & .ouija-appear, span.ouija-appear img{
+      animation: appear 200ms 500ms both;
+
+      & strong{
+        animation: appear-blue 200ms 500ms both;
+      }
+    }
+
+    & .ball-appear, span.ball-appear img{
+      animation: appear 200ms 1s both;
+      
+      & strong{
+        animation: appear-blue 200ms 1s both;
+      }
+    }
+  }
+}
+
+@keyframes appear{
+  to{
+    scale: 1;
+    color: var(--text-body);
+  }
+}
+
+@keyframes dissapear-first{
+  from{
+    color: var(--text-body);
+  }
+  
+  to{
+    color: rgba(226, 231, 233, 0.5);
+  }
+}
+
+@keyframes dissapear{
+  from{
+    scale: 1;
+    color: var(--text-body);
+  }
+  
+  to{
+    scale: 0;
+    color: rgba(226, 231, 233, 0.5);
+  }
+}
+
+@keyframes appear-blue{
+  to{
+    color: var(--blue-light);
+  }
+}
+
+@keyframes dissapear-blue{
+  from{
+    color: var(--blue-light);
+  }
+  
+  to{
+    color: rgba(226, 231, 233, 0.5);
+  }
+}
+
+@media (width >= 48em){
+  #gifts{
+    margin-block: 0 5rem;
+    max-width: 75rem;
+    padding: 0;
+    max-height: 25rem;
+    
+    & h2{
+      margin-block: 7.125rem 9.875rem;
+      font: var(--subtitle);
+      font-size: calc(17.6px + 1vw);
+
+      & strong{
+        font-weight: 700;
+      }
+
+      & b{
+        display: none;
+      }
+
+      & span img{
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+
+    & span, span img{
+      width: 5rem;
+      height: 5rem;
+    }
+
+    & span.book-appear{
+      left: 32.2rem;
+      right: 0;
+
+      & img{
+        transform: 
+        rotate(20.76deg);
+      }
+    }
+
+    & span.ouija-appear{
+      bottom: 4rem;
+
+      & img{
+        transform: rotate(99.47deg);
+      }
+    }
+
+    & span.ball-appear{
+      right: -2rem;
+      bottom: 5rem;
+
+      & img{
+        transform: rotate(-14.28deg);
+      }
+    }
+  }
+}

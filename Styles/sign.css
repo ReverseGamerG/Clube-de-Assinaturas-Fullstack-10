@@ -1,0 +1,317 @@
+#sign{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 3rem;
+  margin: 6.5rem auto;
+
+  & header{
+    margin-inline: 4.8125rem;
+
+    & h3{
+      font: var(--title-xs);
+      font-size: 1.5rem;
+    }
+  }
+
+  & .cards-wrapper{
+    display: flex;
+    padding-left: 3rem;
+    gap: 1rem;
+    overflow: scroll;
+
+    & .before-card{
+      & div:nth-child(1) img{
+        position: absolute;
+      }
+    }
+    
+    & .hover-only{
+      height: fit-content;
+      display: flex;
+      gap: 1rem;
+
+      &:hover{
+        & #semestral{
+          animation: none;
+        }
+      }
+    }
+
+
+    & .cards{
+      max-width: 18rem;
+      width: 18rem;
+      height: 416px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background-color: var(--shape-base);
+      border: 1px solid var(--shape-stroke);
+      border-radius: 1.5rem;
+      transition: background .5s, box-shadow .5s, border .5s;
+
+      & .card-title{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        & .id-title{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          & h4{
+            font: var(--title-xs);
+          }
+          
+          & p{
+            background-color: var(--shape-stroke);
+            padding: .5rem 1.25rem;
+            border-radius: 999px;
+          }
+        }
+
+        & .price{
+          display: flex;
+          flex-direction: column;
+          gap: .5rem;
+
+          & p{
+            display: flex;
+            align-items: baseline;
+            font: var(--title-md);
+
+            & b{
+              font: var(--title-xs);
+            }
+          }
+
+          & em{
+            text-align: start;
+            font: var(--body-sm);
+            color: var(--text-label);
+          }
+        }
+      }
+      
+      & .card-infos{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        & ul{
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: .75rem;
+
+          & li{
+            display: flex;
+            justify-content: flex-start;
+            font: var(--body-xs);
+            gap: .5rem;
+
+            & img{
+              width: .875rem;
+              height: .875rem;
+              filter: invert(44%) sepia(72%) saturate(421%) hue-rotate(157deg) brightness(95%) contrast(94%);
+            }
+          }
+        }
+      }
+
+      &:hover{
+        background-color: var(--shape-hover);
+        border: 1px solid var(--shape-hover);
+        box-shadow: 
+        1px 1px 50px var(--shape-hover);
+      }
+    }
+
+    #semestral{
+      animation: hover linear both;
+
+      & h4{
+        color: var(--pink-light);
+      }
+
+      & ul li{
+        & img{
+          filter: none;
+        }
+      }
+
+      &:hover{
+        animation: none;
+      }
+    }
+
+    #mensal, #anual{
+      & h4{
+        color: var(--blue-light);
+      }
+
+      .button{
+        background-color: var(--blue-dark);
+
+        &:hover{
+          background-color: var(--blue-mid);
+        }
+      }
+    }
+  }
+}
+
+@keyframes hover{
+  to{
+    background-color: var(--shape-hover);
+    border: 1px solid var(--shape-hover);
+    box-shadow:
+    1px 1px 50px var(--shape-hover);
+  }
+}
+
+@media (width >= 48em){
+  #sign{
+    gap: 3.5rem;
+
+    header{
+      margin: 0;
+    }
+
+    .sign-cards{
+      display: flex;
+      justify-content: center;
+    }
+    
+    & .cards-wrapper{
+      align-items: center;
+      padding: 0;
+      width: 65.625rem;
+      justify-content: center;
+      margin-inline: none;
+      overflow: hidden;
+      height: 37.875rem;
+      position: relative;
+      gap: 0;
+      
+      & .before-card{
+        display: flex;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        
+        & img[src*="Bunny"]{
+          top: 1rem;
+          left: 26rem;
+          transition: top .5s;
+        }
+
+        & img[src*="big-1"]{
+          width: 1.625rem;
+          height: 1.625rem;
+          rotate: -8deg;
+          top: 7.6rem;
+          left: 2.5rem;
+          transition: rotate .5s;
+        }
+
+        & img[src*="small-1"]{
+          width: .75rem;
+          height: .75rem;
+          top: 10rem;
+          left: 2.5rem;
+          rotate: -8deg;
+          transition: rotate .5s;
+        }
+
+        & img[src*="big-2"]{
+          rotate: 8deg;
+          right: 5.5rem;
+          bottom: 1.5rem;
+          width: 1.625rem;
+          height: 1.625rem;
+          transition: rotate .5s;
+        }
+
+        & img[src*="small-2"]{
+          rotate: 8deg;
+          right: 8.5rem;
+          bottom: 1.5rem;
+          width: .75rem;
+          height: .75rem;
+          transition: rotate .5s;
+        }
+
+        &:hover{
+          z-index: 2;
+
+          & img[src*="Bunny"]{
+            top: 0rem;
+            left: 26rem;
+          }
+
+          & img[src*="big-1"]{
+            rotate: -20deg;
+          }
+
+          & img[src*="small-1"]{
+            rotate: 10deg;
+          }
+
+          & img[src*="big-2"]{
+            rotate: 20deg;
+          }
+
+          & img[src*="small-2"]{
+            rotate: -10deg;
+          }
+
+          & #semestral{
+            &:hover{
+              top: 3rem;
+            }
+          }
+
+          #mensal{
+            bottom: 5rem;
+          }
+
+          #anual{
+            bottom: 5rem;
+          }
+        }
+      }
+
+      #semestral{ 
+        position: absolute;
+        top: 4rem;
+        z-index: 1;
+        transition: top .5s, z-index .5s, background .5s;
+      }
+
+      #mensal{
+        rotate: -8deg;
+        position: absolute;
+        left: 6rem;
+        bottom: 4rem;
+        transition: bottom .5s, z-index .5s, background .5s;
+      }
+
+      #anual{
+        rotate: 8deg;
+        position: absolute;
+        right: 6rem;
+        bottom: 4rem;
+        transition: bottom .5s, z-index .5s, background .5s;
+      }
+    }
+
+    
+  }
+}
